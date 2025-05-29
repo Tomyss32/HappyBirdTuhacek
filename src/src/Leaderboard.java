@@ -29,7 +29,7 @@ public class Leaderboard {
      * Loads scores from a file
      */
     public void loadScoresFromFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("leaderboard.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\HappyBirdTuhacek\\src\\src\\leaderboard.txt"))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 scores.add(Integer.parseInt(line));
@@ -46,7 +46,7 @@ public class Leaderboard {
         List<Integer> sortedScores = new ArrayList<>(scores);
         Collections.sort(sortedScores, Collections.reverseOrder());
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("leaderboard.txt"))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\HappyBirdTuhacek\\src\\src\\leaderboard.txt"))) {
             for (int i = 0; i < sortedScores.size(); i++) {
                 if (i >= 5) break;
                 writer.write(Integer.toString(sortedScores.get(i)));

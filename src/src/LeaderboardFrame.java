@@ -92,7 +92,7 @@ public class LeaderboardFrame extends JFrame {
      * Retrieves scores from a file and displays them in a text area
      */
     public void loadLeaderboardFromFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("leaderboard.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\HappyBirdTuhacek\\src\\src\\leaderboard.txt"))) {
             String line;
             StringBuilder leaderboardText = new StringBuilder();
             int count = 0;

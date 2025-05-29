@@ -80,7 +80,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
 
         start();
 
-        placePipeTimer = new Timer(1700, e -> placePipes());
+        placePipeTimer = new Timer(1800, e -> placePipes());
         gameLoop = new Timer(1000 / 50, this);
         secondTimer = new Timer(1000, e -> updateTimer());
     }

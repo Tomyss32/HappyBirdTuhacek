@@ -97,7 +97,7 @@ public class EndScreen extends JPanel {
         newFrame.setResizable(false);
         newFrame.setLocationRelativeTo(null);
         newFrame.setVisible(true);
-        WebSocket.Listener listener = new WebSocket.Listener(newFrame);
+        Listener listener = new Listener(newFrame);
         newFrame.addWindowListener(listener);
     }
 
