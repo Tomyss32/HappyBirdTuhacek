@@ -26,12 +26,12 @@ public class EndScreen extends JPanel {
         setForeground(Color.BLACK);
 
         JLabel gameOverLabel = new JLabel("GAME OVER", SwingConstants.CENTER);
-        gameOverLabel.setForeground(Color.YELLOW);
+        gameOverLabel.setForeground(Color.WHITE);
         gameOverLabel.setBackground(Color.BLACK);
         gameOverLabel.setFont(new Font("Arial", Font.BOLD, 80));
 
         scoreLabel = new JLabel("SCORE: " + score, SwingConstants.CENTER);
-        scoreLabel.setForeground(Color.YELLOW);
+        scoreLabel.setForeground(Color.WHITE);
         scoreLabel.setBackground(Color.BLACK);
         scoreLabel.setFont(new Font("Arial", Font.PLAIN, 60));
 
@@ -48,9 +48,9 @@ public class EndScreen extends JPanel {
         backButton.setPreferredSize(buttonSize);
         exitButton.setPreferredSize(buttonSize);
 
-        startButton.setBackground(Color.YELLOW);
-        backButton.setBackground(Color.YELLOW);
-        exitButton.setBackground(Color.YELLOW);
+        startButton.setBackground(Color.WHITE);
+        backButton.setBackground(Color.WHITE);
+        exitButton.setBackground(Color.WHITE);
 
         startButton.setForeground(Color.BLACK);
         backButton.setForeground(Color.BLACK);

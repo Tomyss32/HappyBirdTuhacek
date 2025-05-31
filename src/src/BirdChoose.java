@@ -48,7 +48,7 @@ public class BirdChoose extends JPanel {
 
         JButton selectButton = new JButton("SELECT");
         selectButton.setPreferredSize(new Dimension(360, 85));
-        selectButton.setBackground(Color.YELLOW);
+        selectButton.setBackground(Color.WHITE);
         selectButton.setOpaque(true);
         selectButton.setBorderPainted(false);
         selectButton.addActionListener(e -> selectActionPerformed());

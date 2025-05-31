@@ -28,7 +28,7 @@ public class Menu extends JPanel {
         JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
         JLabel titleLabel = new JLabel("FLAPPY BIRD", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 70));
-        titleLabel.setForeground(Color.YELLOW);
+        titleLabel.setForeground(Color.WHITE);
         titlePanel.setBackground(Color.BLACK);
         titlePanel.add(titleLabel);
         add(titlePanel, BorderLayout.CENTER);
@@ -41,25 +41,25 @@ public class Menu extends JPanel {
 
         startButton = new JButton("START");
         startButton.setPreferredSize(new Dimension(360, 85));
-        startButton.setBackground(Color.YELLOW);
+        startButton.setBackground(Color.WHITE);
         startButton.addActionListener(e -> buttonActionPerformed(e));
         buttonPanel.add(startButton);
 
         selectBirdButton = new JButton("SELECT BIRD");
         selectBirdButton.setPreferredSize(new Dimension(360, 85));
-        selectBirdButton.setBackground(Color.YELLOW);
+        selectBirdButton.setBackground(Color.WHITE);
         selectBirdButton.addActionListener(e -> selectBird());
         buttonPanel.add(selectBirdButton);
 
         leaderboardButton = new JButton("LEADERBOARD");
         leaderboardButton.setPreferredSize(new Dimension(360, 85));
-        leaderboardButton.setBackground(Color.YELLOW);
+        leaderboardButton.setBackground(Color.WHITE);
         leaderboardButton.addActionListener(e -> buttonActionPerformed(e));
         buttonPanel.add(leaderboardButton);
 
         exitButton = new JButton("EXIT");
         exitButton.setPreferredSize(new Dimension(360, 85));
-        exitButton.setBackground(Color.YELLOW);
+        exitButton.setBackground(Color.WHITE);
         exitButton.addActionListener(e -> buttonActionPerformed(e));
         buttonPanel.add(exitButton);
 
