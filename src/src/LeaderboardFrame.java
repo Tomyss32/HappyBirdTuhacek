@@ -11,7 +11,7 @@ public class LeaderboardFrame extends JFrame {
     private JTextArea leaderboardTextArea;
 
     /**
-     * Leaderboard constructor
+     * Leaderboard construction
      */
     public LeaderboardFrame() {
         setTitle("Flappy Bird");
@@ -19,25 +19,25 @@ public class LeaderboardFrame extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        getContentPane().setBackground(Color.BLACK);
+        getContentPane().setBackground(Color.WHITE);
 
         JLabel recordsLabel = new JLabel("RECORDS", SwingConstants.CENTER);
-        recordsLabel.setForeground(Color.YELLOW);
+        recordsLabel.setForeground(Color.BLACK);
         recordsLabel.setFont(new Font("Arial", Font.BOLD, 60));
         add(recordsLabel, BorderLayout.NORTH);
 
         leaderboardTextArea = new JTextArea();
         leaderboardTextArea.setEditable(false);
         leaderboardTextArea.setFont(new Font("Arial", Font.PLAIN, 55));
-        leaderboardTextArea.setBackground(Color.BLACK);
-        leaderboardTextArea.setForeground(Color.YELLOW);
+        leaderboardTextArea.setBackground(Color.WHITE);
+        leaderboardTextArea.setForeground(Color.BLACK);
 
         JScrollPane scrollPane = new JScrollPane(leaderboardTextArea);
-        scrollPane.getViewport().setBackground(Color.BLACK);
+        scrollPane.getViewport().setBackground(Color.WHITE);
         getContentPane().add(scrollPane, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(Color.BLACK);
+        buttonPanel.setBackground(Color.WHITE);
 
         JButton exitButton = createButton("EXIT");
         JButton backButton = createButton("BACK TO MENU");
@@ -45,7 +45,7 @@ public class LeaderboardFrame extends JFrame {
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int choice = JOptionPane.showConfirmDialog(LeaderboardFrame.this, "Do you really want to close the window?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+                int choice = JOptionPane.showConfirmDialog(LeaderboardFrame.this, "Do you really wish to Exit?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
                 if (choice == JOptionPane.YES_OPTION) {
                     LeaderboardFrame.this.dispose();
                     System.exit(0);
@@ -74,7 +74,7 @@ public class LeaderboardFrame extends JFrame {
     }
 
     /**
-     * Creates button
+     * Creation of a button
      *
      * @param text Button text
      * @return New button
@@ -82,14 +82,14 @@ public class LeaderboardFrame extends JFrame {
     public JButton createButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("Arial", Font.BOLD, 18));
-        button.setBackground(Color.YELLOW);
-        button.setForeground(Color.BLACK);
+        button.setBackground(Color.BLACK);
+        button.setForeground(Color.WHITE);
         button.setPreferredSize(new Dimension(200, 75));
         return button;
     }
 
     /**
-     * Retrieves scores from a file and displays them in a text area
+     * Retrieves scores from a file and displays them
      */
     public void loadLeaderboardFromFile() {
         try (BufferedReader reader = new BufferedReader(new FileReader("C:\\HappyBirdTuhacek\\src\\src\\leaderboard.txt"))) {
@@ -107,7 +107,7 @@ public class LeaderboardFrame extends JFrame {
     }
 
     /**
-     * Returns a string to indicate the ranking position
+     * Returns a string to make the leaderboard
      *
      * @param number Rank number
      * @return Ranking designation

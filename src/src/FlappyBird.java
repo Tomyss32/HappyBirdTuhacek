@@ -86,7 +86,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
     }
 
     /**
-     * Method for starting the game
+     * Method for starting your jounrey
      */
     public void start() {
         bird = new Bird(birdImage, boardHeight / 8, boardWidth / 2, birdWidth, birdHeight);
@@ -105,24 +105,9 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
     }
 
     /**
-     * A method for processing game events
-     *
-     * @param e Action event
+     * A method for the endgame screen
      */
-    public void actionPerformed(ActionEvent e) {
-        if (!paused && !gameOver) {
-            movement();
-        }
-        repaint();
-        if (gameOver) {
-            endGame();
-        }
-    }
-
-    /**
-     * A method for the endgame after dead
-     */
-    public void endGame() {
+    public boolean endGame() {
         gameLoop.stop();
         placePipeTimer.stop();
         secondTimer.stop();
@@ -137,7 +122,25 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
         frame.add(endScreen);
         frame.revalidate();
         frame.repaint();
+        return true;
     }
+
+    /**
+     * A method for processing game events
+     *
+     * @param e Action event
+     */
+    public void actionPerformed(ActionEvent e) {
+        if (!paused && !gameOver) {
+            movement();
+        }
+        repaint();
+        if (gameOver) {
+            endGame();
+        }
+    }
+
+
 
     //
     @Override
@@ -148,7 +151,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
     //
 
     /**
-     * Method for rendering game objects
+     * Method for spawning game objects
      *
      * @param g graphics
      */
@@ -196,6 +199,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
 
     /**
      * Method for updating game objects (movement)
+     * 50/50 With video
      */
     public void movement() {
         bird.setY(bird.getY() + (int) (bird.getVelocityY() * gameSpeed));
@@ -228,7 +232,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
 
 
     /**
-     * Check for collision between bird and pipe
+     * Check for collisions between bird and pipes
      *
      * @param a The bird object
      * @param b The pipe object
@@ -254,7 +258,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
     }
 
     /**
-     * Method for update time
+     * Method for updating time
      */
     public void updateTimer() {
         if (!paused && !gameOver) {
@@ -320,6 +324,9 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
         repaint();
     }
 
+    /**
+     * Method for counting your clicks per game
+     */
     @Override
     public void mouseClicked(MouseEvent e) {
         if (!gameLoop.isRunning() && !placePipeTimer.isRunning() && !secondTimer.isRunning()) {
@@ -379,7 +386,7 @@ public class FlappyBird extends JPanel implements ActionListener, KeyListener, M
     }
 
     /**
-     * Method for activate the power up
+     * Method for activating the power up
      */
     public void activatePowerUp() {
         collisionDisabled = true;

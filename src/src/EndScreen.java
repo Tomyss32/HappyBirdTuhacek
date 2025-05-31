@@ -82,25 +82,6 @@ public class EndScreen extends JPanel {
         add(scoreLabel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
     }
-
-    /**
-     * Restart game after press button "RESTART".
-     */
-    public void restartGame() {
-        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
-        frame.dispose();
-        JFrame newFrame = new JFrame("Flappy Bird");
-        newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        FlappyBird flappyBird = new FlappyBird(birdImage);
-        newFrame.getContentPane().add(flappyBird);
-        newFrame.pack();
-        newFrame.setResizable(false);
-        newFrame.setLocationRelativeTo(null);
-        newFrame.setVisible(true);
-        Listener listener = new Listener(newFrame);
-        newFrame.addWindowListener(listener);
-    }
-
     /**
      * Back to menu after press button "BACK TO MENU"
      */
@@ -123,4 +104,25 @@ public class EndScreen extends JPanel {
             }
         }
     }
+
+    /**
+     * Restart game after press button "RESTART".
+     */
+    public void restartGame() {
+        JFrame frame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        frame.dispose();
+        JFrame newFrame = new JFrame("Flappy Bird");
+        newFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        FlappyBird flappyBird = new FlappyBird(birdImage);
+        newFrame.getContentPane().add(flappyBird);
+        newFrame.pack();
+        newFrame.setResizable(false);
+        newFrame.setLocationRelativeTo(null);
+        newFrame.setVisible(true);
+        Listener listener = new Listener(newFrame);
+        newFrame.addWindowListener(listener);
+    }
+
+
+
 }
