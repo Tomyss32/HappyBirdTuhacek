@@ -102,7 +102,7 @@ public class BirdChoose extends JPanel {
     }
 
     /**
-     * Creates an ImageIcon from the given file
+     * Creates an ImageIcon from the given image
      *
      * @param fileName name of file with image
      * @return An ImageIcon created from the given file
